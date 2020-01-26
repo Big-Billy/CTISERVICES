@@ -1,0 +1,88 @@
+<?php
+
+echo '<form id="propertyform" action="#" method="post">
+			<div>
+			<label for="propertyid">Unique ID</label>
+			<input type="integer" id="propertyid" name="propertyid">
+			</div>
+			
+			<div>
+			<label for="client">Client Name</label>
+			<input type="text" id="client" name="client">
+			</div>
+			
+			<div>
+			<label for="address1">Address Line 1</label>
+			<input type="text" id="address1" name="address1">
+			</div>
+			
+			<div>
+			<label for="address2">Address Line 2</label>
+			<input type="text" id="address2" name="address2">
+			</div>
+			
+			<div>
+			<label for="city">City</label>
+			<input type="text" id="city" name="city">
+			</div>
+			
+			<div>
+			<label for="postcode">Postal Code</label>
+			<input type="text" id="postcode" name="postcode">
+			</div>
+			
+			<div>
+			<label for="status">Status</label>
+			<input type="text" id="status" name="status">
+			</div>
+			
+			<div>
+			<label for="inspector">Inspector</label>
+			<input type="text" id="inspector" name="inspector">
+			</div>
+			
+			<div>
+			<label for="frequency">Inspection Frequency</label>
+			<input type="text" id="frequency" name="frequency">
+			</div>
+			
+			<div>
+			<label for="comments">Notes / Comments</label>
+			<input type="text" id="comments" name="comments">
+			</div>
+			<p>Characters remaining: <span id="remaining">100</span></p>
+			
+			<div>
+			</br><input id="submit" type="submit" name="submit" value="Submit">
+			<input id="clear" type="reset" name="reset" value="Clear">
+			</div>
+	
+		
+		</form>
+		
+		<script type="text/javascript">
+		
+		$(document).ready(function() {
+		
+			$("#propertyform").submit(function(event){
+				if($("#propertyid").val()==""){
+					alert("Certain Fields are Incomplete");
+					event.preventDefault();
+					return false;
+				}
+			});
+		});
+		
+		$(document).ready(function() {
+			var maxCharacters = 100;
+			$("#comments").on("keyup", function() {
+				var currentVal = $("#comments").val().length;
+				var totalRemaining = maxCharacters - currentVal;
+				$("#remaining").text(totalRemaining);
+			});
+		});
+				
+		</script>'
+		 
+
+?>
