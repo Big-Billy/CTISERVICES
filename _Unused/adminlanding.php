@@ -26,36 +26,15 @@ Admin Dashboard
 		
 		<div id="directory">
 		<ul>
-			<li><a href="adminlanding.php?clicked=1">Dashboard</a></li>
-			<li><a href="adminlanding.php?clicked=2">Properties</a></li>
-			<li><a href="adminlanding.php?clicked=3">Clients</a></li>
-			<li><a href="adminlanding.php?clicked=4">Inspectors</a></li>
+			<li><a href="#">Dashboard</a></li>
+			<li><a href="#properties">Properties</a></li>
+			<li><a href="#clients">Clients</a></li>
+			<li><a href="#inspectors">Inspectors</a></li>
 		</ul>
 		</div> <!-- end of directory -->
 			
 		<div id="outputarea">
-		
-		
-		<?php 
-		
-		function menuselect() {
-			if ($_GET['clicked'] == 1){
-				include 'includes/dashboard.php';
-			} else if ($_GET['clicked'] == 2) {
-				include 'includes/propertiesmainview.php';
-			} else if ($_GET['clicked'] == 3) {
-				include 'includes/clientsmainview.php';
-			} else if ($_GET['clicked'] == 4) {
-				include 'includes/inspectorsmainview.php';
-			} else {
-				include 'includes/dashboard.php';
-			}
-		}
-		
-		menuselect();
-		
-		?>
-		
+				
 		<p ng-controller='dashboardController'> {{dashboardText}} </p>
 		
 		</div> <!-- end of outputarea -->
