@@ -31,16 +31,24 @@ mainModule.config(function($routeProvider) {
 mainModule.controller ('dashboardController', function ($scope) {
 	var dashText = 'This is the Dashboard page, isn\'t it';
 	$scope.dashboardText = dashText;
-})
-mainModule.controller ('propertiesController', function ($scope) {
+});
 
-	if($routeParams ['propertyAction'] == 'AddNew') {
+mainModule.controller ('propertiesController', function ($scope,$routeParams) {
 
+
+	if($routeParams ['propertyAction'] == "AddNew") {
+		
+		$scope.inspectors = [
+			{ firstname: "Willy", lastname: "Wonka" },
+			{ firstname: "Buzz", lastname: "Killington" },
+			{ firstname: "Ricky", lastname: "Bobby"}
+		];		
 	}
-		else if (routeParams ['propertyAction'] == 'Edit') {
+		else if ($routeParams ['propertyAction'] == "Edit") {
 	
 	}
 });
+
 mainModule.controller ('errorController', function ($scope) {
 	var dashText = 'This is not good';
 	$scope.dashboardText=dashText;
